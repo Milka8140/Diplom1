@@ -1,0 +1,272 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* Базовые переменные */
+:root {
+  --font-main: 'Nunito', sans-serif;
+  --font-accent: 'Inter', sans-serif;
+
+  --radius-card: 20px;
+  --radius-btn: 10px;
+
+  --padding-card: 32px;
+  --card-width: 420px;
+  --card-min-height: 520px;
+
+  --logo-size: 46px;
+  --title-size: 26px;
+  --label-size: 20px;
+  --input-height: 50px;
+  --input-font-size: 18px;
+  --btn-height: 50px;
+  --btn-font-size: 22px;
+  --register-font-size: 16px;
+
+  --shadow-card: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.dark-theme {
+  --icon-color: #FFFFFF;
+  --bg-gradient: linear-gradient(
+    180deg,
+    #10101F 10%,
+    #1F1C3D 22%,
+    #211D3E 34%,
+    #241F44 50%,
+    #27224A 71%,
+    #1C1934 78%,
+    #0D0D18 91%
+  );
+
+  --text-color: #FFFFFF;
+  --text-muted: rgba(202, 219, 243, 0.7); /* исправлено */
+
+  --form-bg: #0d0d18;
+  --form-border: rgba(202, 219, 243, 0.7);
+  --form-input-bg: rgba(122, 134, 151, 0.21);
+  --form-input-text: #ffffff;
+  --form-placeholder: rgba(255, 255, 255, 0.5);
+
+  --btn-bg: #046b00;
+  --btn-bg-hover: #06aa00;
+  --btn-text: #ffffff;
+
+  --link-color: #046b00;
+  --link-hover: #06aa00;
+  --no-account-color: #cadbf3;
+
+  --shadow-card: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.light-theme {
+  --icon-color: #000000;
+  --bg-gradient: linear-gradient(
+    180deg,
+    #B3D9FF 0%,
+    #FFFFFF 45%,
+    #FFCCE5 100%
+  );
+
+  --text-color: #1C1C1C;
+  --text-muted: #888888;
+
+  --form-bg: #FFFFFF;
+  --form-border: #B3D9FF;
+  --form-input-bg: #F7F9FC;
+  --form-input-text: #1C1C1C;
+  --form-placeholder: #888888;
+
+  --btn-bg: #6A4FB6;
+  --btn-bg-hover: #9B7FE0;
+  --btn-text: #ffffff;
+
+  --link-color: #6A4FB6;
+  --link-hover: #9B7FE0;
+  --no-account-color: #1C1C1C;
+
+  --shadow-card: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.theme-btn:hover { transform: scale(1.1); }
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--font-main);
+  color: var(--text-color);
+}
+
+a { text-decoration: none; }
+
+.screen {
+  background: var(--bg-gradient);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--form-bg);
+  border-radius: var(--radius-card);
+  padding: var(--padding-card);
+  width: var(--card-width);
+  min-height: var(--card-min-height);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: var(--logo-size);
+  margin-bottom: 12px;
+  user-select: none;
+  cursor: default;
+  font-family: var(--font-accent);
+  color: var(--text-color);
+}
+
+.title {
+  font-weight: 400;
+  font-size: var(--title-size);
+  margin-bottom: 18px;
+  user-select: none;
+  cursor: default;
+  font-family: var(--font-accent);
+  color: var(--text-color);
+}
+
+/* 🔧 Форма */
+.form-register {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-register label {
+  display: block;
+  margin-left: 6px;
+  margin-bottom: 4px;
+  text-align: left;
+  font-weight: 500;
+  font-size: var(--label-size);
+  color: var(--text-muted);
+  user-select: none;
+  cursor: default;
+}
+
+.form-register input {
+  width: 100%;
+  height: var(--input-height);
+  background-color: var(--form-input-bg);
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--form-border);
+  padding: 0 14px;
+  color: var(--form-input-text);
+  font-size: var(--input-font-size);
+}
+
+.form-register input::placeholder {
+  color: var(--form-placeholder);
+}
+
+.form-register .btn-register {
+  width: 100%;
+  height: var(--btn-height);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: var(--radius-btn);
+  font-size: var(--btn-font-size);
+  text-align: center;
+  line-height: var(--btn-height);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  margin-top: 8px;
+}
+
+.form-register .btn-register:hover {
+  transform: scale(1.05);
+  background-color: var(--btn-bg-hover);
+}
+
+.register-text {
+  font-weight: 400;
+  font-size: var(--register-font-size);
+  text-align: center;
+  margin-top: 16px;
+  user-select: none;
+  cursor: default;
+  color: var(--text-color);
+}
+
+.no-account {
+  color: var(--no-account-color);
+  user-select: none;
+  cursor: default;
+}
+
+.link-login,
+.link-register {
+  color: var(--link-color);
+  font-weight: 400;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+}
+
+.link-login:hover,
+.link-register:hover {
+  transform: scale(1.05);
+  color: var(--link-hover);
+}
+
+.theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  z-index: 1000;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--icon-color);
+}
+
+.theme-btn svg {
+  color: inherit;
+  width: 24px;
+  height: 24px;
+}
+
+.dark-theme #moon-btn svg path {
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.light-theme #sun-btn svg circle {
+  fill: #000000;
+  stroke: #000000;
+}
+
+.light-theme #sun-btn svg line {
+  stroke: #000000;
+}
+
+.light-theme #moon-btn svg path {
+  fill: none;
+  stroke: #000000;
+}
